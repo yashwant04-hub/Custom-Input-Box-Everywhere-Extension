@@ -1,0 +1,41 @@
+{
+    "manifest_version": 2,
+    "name": "Habit Mode Input Overlay + Logging Demo",
+    "version": "1.0",
+    "description": "Toggle between Habit and Advanced Mode with logging and extraction features",
+    "icons": {
+      "48": "icon.png"
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab",
+      "<all_urls>",
+      "contextMenus"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": [], 
+        "run_at": "document_idle"
+      }
+    ],
+    "commands": {
+      "toggle_mode": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Y",
+          "mac": "Command+Shift+Y"
+        },
+        "description": "Toggle between habit and advanced mode"
+      }
+    },
+    "web_accessible_resources": ["icon.png"]
+  }
+  

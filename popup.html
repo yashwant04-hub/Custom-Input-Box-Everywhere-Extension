@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mode Switcher + CSS Prompt</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 16px;
+      width: 300px;
+      background: linear-gradient(145deg, #f0f4ff, #ffffff);
+    }
+
+    h1 {
+      font-size: 18px;
+      color: #222;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    input, textarea, button {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 86, 179, 0.4);
+    }
+
+    #sendPromptBtn {
+      background-color: #28a745;
+      box-shadow: 0 3px 6px rgba(40, 167, 69, 0.3);
+    }
+
+    #sendPromptBtn:hover {
+      background-color: #218838;
+      box-shadow: 0 4px 8px rgba(33, 136, 56, 0.4);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .advanced-box {
+      display: none;
+      background-color: #ffffff;
+      border: 1px solid #dce3f0;
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      height: 80px;
+      resize: none;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      background-color: #f9f9f9;
+    }
+
+    #suggestionsBox {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 10px;
+      border-top: 1px solid #eee;
+      background-color: #f1f5fb;
+      border-radius: 8px;
+    }
+
+    #suggestionsBox h4 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    #suggestionsBox button {
+      background-color: #6c757d;
+      color: white;
+      padding: 8px;
+      font-size: 13px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: background-color 0.2s ease;
+      box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
+    }
+
+    #suggestionsBox button:hover {
+      background-color: #5a6268;
+    }
+
+    #apiKeyContainer {
+      margin-bottom: 16px;
+      background-color: #ffffff;
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      border: 1px solid #dce3f0;
+    }
+
+    h3 {
+      font-size: 15px;
+      margin-top: 0;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div id="apiKeyContainer">
+    <h1>Enter API Key</h1>
+    <input type="text" id="apiKeyInput" placeholder="Paste your API key" />
+    <button id="saveApiKeyBtn">Save API Key</button>
+  </div>
+
+  <button id="toggle-mode">Switch to Advanced Mode</button>
+
+  <div id="advancedBox" class="advanced-box">
+    <h3>CSS Prompt</h3>
+    <textarea id="promptInput" placeholder="e.g. Make all inputs red with bold text"></textarea>
+    <button id="sendPromptBtn">Send to Background</button>
+
+    <h3 style="margin-top: 12px;">Suggestions:</h3>
+    <div id="suggestionsBox"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

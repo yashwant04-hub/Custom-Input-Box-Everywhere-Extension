@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mode Switcher + CSS Prompt</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 12px;
+      width: 270px;
+      background-color: #f7f9fc;
+    }
+
+    h1 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px 12px;
+      margin-bottom: 12px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .advanced-box {
+      display: none;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      resize: none;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #sendPromptBtn {
+      background-color: #28a745;
+    }
+
+    #sendPromptBtn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h1>This is Captain Jack Sparrow</h1>
+
+  <button id="toggle-mode">Switch to Advanced Mode</button>
+
+  <div id="advancedBox" class="advanced-box">
+    <h3 style="margin-top: 0; font-size: 15px;">CSS Prompt</h3>
+    <textarea id="promptInput" placeholder="e.g. Make all inputs red with bold text"></textarea>
+    <button id="sendPromptBtn">Send to Background</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
